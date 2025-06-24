@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*next;
 	int		len;
 
-	if (!lst || !*lst)
+	if (!lst || !*lst || !del)
 		return ;
 	len = ft_lstsize(*lst);
 	while (len)

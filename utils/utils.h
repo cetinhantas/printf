@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chantas <chantas@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:25:35 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/20 22:39:00 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/24 18:10:09 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/24 18:23:58 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../printf.h"
 
-static void	ft_write(const char *s, int *i)
-{
-	while (*s != '%')
-	{
-		write(1, s, 1);
-		s++;
-		(*i)++;
-	}
-}
-int	ft_printf(const char *s, ...)
-{
-	int	i;
-	va_list	args;
-
-	i = 0;
-	va_start(args, s);
-	ft_write(s, &i);
-	return (i);
-}
+void	ft_print_c(char c, int *i);
+void	ft_print_str(char *str, int *i);
+void	ft_print_p(void *p, int *i);
+void	ft_print_hex(unsigned int n, int *i);
+void	ft_print_num(int n, int *i);
+void	ft_print_uint(unsigned int n, int *i);
+void	ft_check_fs(char c, int *i);
