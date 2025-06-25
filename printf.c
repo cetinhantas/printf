@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chantas <chantas@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*   By: chantas <chantas@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 22:06:34 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/05 22:49:22 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/25 20:15:35 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/25 20:24:05 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "printf.h"
+#include <stdio.h>
+#include <unistd.h>
+int	main()
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	printf("asjdnsodgsdf");
+	write(1, "2\n", 2);
+	printf("sdpknskofgnsg\n");
 }
