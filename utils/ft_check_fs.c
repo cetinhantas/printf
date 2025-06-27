@@ -6,7 +6,7 @@
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:15:49 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 21:47:52 by chantas          ###   ########.fr       */
+/*   Updated: 2025/06/28 00:52:39 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_check_fs(char c, int *i, va_list args)
 {
 	void	*ptr;
 
-	if (c == '%')
-		ft_print_c('%', i);
 	if (c == 'c')
 		ft_print_c(va_arg(args, int), i);
 	if (c == 's')
@@ -35,7 +33,10 @@ void	ft_check_fs(char c, int *i, va_list args)
 		ptr = va_arg(args, void *);
 		if (!ptr)
 			ft_print_str("(nil)", i);
-		ft_print_str("0x", i);
-		ft_print_hex((unsigned long long)ptr, 0, 16, i);
+		else
+		{
+			ft_print_str("0x", i);
+			ft_print_hex((unsigned long long)ptr, 0, 16, i);
+		}
 	}
 }

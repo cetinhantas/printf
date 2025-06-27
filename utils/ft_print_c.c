@@ -6,7 +6,7 @@
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:41:14 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 16:42:32 by chantas          ###   ########.fr       */
+/*   Updated: 2025/06/28 00:37:34 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_print_c(char c, int *i)
 {
-	write(1, &c, 1);
+	if (c == '%')
+		write(1, "%", 1);
+	else
+		write(1, &c, 1);
 	(*i)++;
 }

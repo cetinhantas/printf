@@ -6,7 +6,7 @@
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 20:15:35 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 20:16:22 by chantas          ###   ########.fr       */
+/*   Updated: 2025/06/28 00:47:40 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s == '%')
 		{
-			ft_check_fs(s[1], &i, args);
+			if (s[1] == '%')
+				ft_print_c(s[1], &i);
+			else
+				ft_check_fs(s[1], &i, args);
 			s += 2;
 		}
 		else
 		{
-			write(1, s, 1);
-			i++;
+			ft_print_c(*s, &i);
 			s++;
 		}
 	}
