@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 18:10:09 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 02:03:45 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/27 16:41:14 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/27 16:42:32 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-# include "../printf.h"
-
-void	ft_print_c(char c, int *i);
-void	ft_print_str(char *str, int *i);
-void	ft_print_p(void *p, int *i);
-void	ft_print_hex(unsigned int n, int *i);
-void	ft_print_num(int n, int *i);
-void	ft_print_uint(unsigned int n, int *i);
-void	ft_check_fs(char c, int *i, va_list args);
-
-#endif
+void	ft_print_c(char c, int *i)
+{
+	write(1, &c, 1);
+	(*i)++;
+}
