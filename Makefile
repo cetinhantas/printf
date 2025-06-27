@@ -20,9 +20,6 @@ $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 	make clean
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 clean:
 	rm -f $(OFILES)
 
