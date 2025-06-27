@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 18:10:09 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 21:26:58 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/27 19:50:58 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/27 21:28:45 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-# include "../ft_printf.h"
+void	ft_print_hex(unsigned long long n, int is_up, int b, int *i)
+{
+	unsigned long long	base;
+	char				*set;
 
-void	ft_print_c(char c, int *i);
-void	ft_print_str(char *str, int *i);
-void	ft_print_hex(unsigned long long n, int is_up, int base, int *i);
-void	ft_print_int(int n, int *i);
-void	ft_check_fs(char c, int *i, va_list args);
-
-#endif
+	base = b;
+	set = "0123456789abcdef";
+	if (is_up)
+		set = "0123456789ABCDEF";
+	if (n > base)
+	{
+		ft_print_hex(n / base, is_up, base, i);
+		ft_print_hex(n % base, is_up, base, i);
+	}
+	else
+	{
+		ft_print_c(set[n], i);
+	}
+}

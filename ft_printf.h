@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 20:15:35 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 16:09:58 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/24 13:50:39 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/27 20:13:47 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printf(const char *s, ...)
-{
-	int		i;
-	va_list	args;
+# include <stdarg.h>
+# include <unistd.h>
+# include "utils/utils.h"
 
-	i = 0;
-	va_start(args, s);
-	while (*s)
-	{
-		if (*s == '%')
-		{
-			ft_check_fs(s[1], &i, args);
-			s += 2;
-		}
-		else
-		{
-			write(1, s, 1);
-			i++;
-			s++;
-		}
-	}
-	va_end(args);
-	return (i);
-}
+int	ft_printf(const char *s, ...);
+
+#endif

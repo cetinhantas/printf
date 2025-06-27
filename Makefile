@@ -1,9 +1,11 @@
 UTILS_DIR = utils
 
-CFILES = printf.c \
-         $(UTILS_DIR)/ft_check_fs.c \
-         $(UTILS_DIR)/ft_print_c.c \
-         $(UTILS_DIR)/ft_print_str.c
+CFILES = ft_printf.c \
+         $(UTILS_DIR)/ft_check_fs.c 	\
+         $(UTILS_DIR)/ft_print_c.c 		\
+         $(UTILS_DIR)/ft_print_str.c	\
+		 $(UTILS_DIR)/ft_print_int.c	\
+		 $(UTILS_DIR)/ft_print_hex.c
 
 OFILES = $(CFILES:.c=.o)
 

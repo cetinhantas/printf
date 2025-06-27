@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chantas <chantas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 18:10:09 by chantas           #+#    #+#             */
-/*   Updated: 2025/06/27 21:26:58 by chantas          ###   ########.fr       */
+/*   Created: 2025/06/27 19:58:40 by chantas           #+#    #+#             */
+/*   Updated: 2025/06/27 20:45:13 by chantas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-# include "../ft_printf.h"
-
-void	ft_print_c(char c, int *i);
-void	ft_print_str(char *str, int *i);
-void	ft_print_hex(unsigned long long n, int is_up, int base, int *i);
-void	ft_print_int(int n, int *i);
-void	ft_check_fs(char c, int *i, va_list args);
-
-#endif
+void	ft_print_int(int n, int *i)
+{
+	if (n == -2147483648)
+	{
+		ft_print_str("-2147483648", i);
+	}
+	else if (n < 0)
+	{
+		ft_print_c('-', i);
+		n = -n;
+	}
+	else if (n > 9)
+	{
+		ft_print_int(n / 10, i);
+		ft_print_int(n % 10, i);
+	}
+	else
+	{
+		ft_print_c(n + 48, i);
+	}
+}
